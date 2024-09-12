@@ -3,6 +3,13 @@ const vaciar = () => {
     document.getElementById("pantalla").value = "";
   };
 
+let valor = 0, acc = 0, op = "";
+  
+function valorInicial(){
+    valor = document.getElementById("pantalla");
+    console.log(valor.value);
+};
+
 //validación de datos en el input
 const validarEntrada = (input) =>{
     const regex = /^-?\d+(\.\d+)?(,-?\d+(\.\d+)?)*$/;
@@ -62,4 +69,37 @@ const fact = () => {
     }else{
       mostrarError();
     }
+};
+
+//operaciones binarias: multiplicación y suma
+const mul = () => {
+    if(validarEntrada(valor.value)){
+      acc = valor.value;
+      op = "*";
+    }else{
+      mostrarError();
+    };
+};
+
+const add = () => {
+    if(validarEntrada(valor.value)){
+      acc = valor.value;
+      op = "+";
+    }else{
+      mostrarError();
+    };
+};
+
+const eq = () => {
+    if(validarEntrada(valor.value)){
+      if (op === "*") {
+        valor.value = +acc * +valor.value;
+      }
+      if (op === "+") {
+        valor.value = +acc + +valor.value;
+      }
+      actualizar_info(valor.value);
+    }else{
+      mostrarError();
+    };
 };
