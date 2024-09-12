@@ -103,3 +103,52 @@ const eq = () => {
       mostrarError();
     };
 };
+
+//Operaciones en formato CSV
+const sumatorio = () => {
+    let num = document.getElementById("pantalla");
+    if(validarEntrada(num.value)){
+      let valores = num.value.split(",").map(Number);
+      let suma = valores.reduce((a, b) => a + b, 0);
+      num.value = suma;
+      actualizar_info(suma);
+    }else{
+      mostrarError();
+    };
+};
+
+const ordenar = () => {
+    let num = document.getElementById("pantalla");
+    if(validarEntrada(num.value)){
+      let valores = num.value.split(",").map(Number);
+      let ordenados = valores.sort((a, b) => a - b);
+      num.value = ordenados.join(",");
+      actualizar_info(ordenados);
+    }else{
+      mostrarError();
+    };
+};
+
+const revertir = () => {
+    let num = document.getElementById("pantalla");
+    if(validarEntrada(num.value)){
+      let valores = num.value.split(",").map(Number);
+      let reverso = valores.reverse();
+      num.value = reverso.join(",");
+      actualizar_info(reverso);
+    }else{
+      mostrarError();
+    };
+};
+
+const quitar = () => {
+    let num = document.getElementById("pantalla");
+    if (validarEntrada(num.value)) {
+        let valores = num.value.split(",");
+        valores.pop(); // Elimina el último número
+        num.value = valores.join(",");
+        actualizar_info(valores);
+    } else {
+        mostrarError();
+    }
+};
