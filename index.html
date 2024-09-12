@@ -3,20 +3,29 @@
 <head>
   <title>Calculadora</title>
   <meta charset="utf-8">
-  <script type="text/javascript">
-    const vaciar = () => {
-      document.getElementById("pantalla").value = "";
-    }
-
-    const cuadrado = () => {
-      let num = document.getElementById("pantalla");
-      num.value = num.value * num.value;
-    }
-  </script>
 </head>
 <body>
+  <h2>Calculadora del CORE</h2>
   Número:
-  <input type="text" id="pantalla" onclick="vaciar()">
+  <input type="text" id="pantalla" onclick="vaciar()" placeholder="Ingresa un número">
+
+  <h2 id="info" class="grande" title="Info sobre el número">Info sobre el Número</h2>
+
+  <h3>Operaciones Unitarias</h3>
   <button id="cuadrado" onclick="cuadrado()">x<sup>2</sup></button>
+  <button id="modulo" onclick="mod()">Mod</button>
+  <button id="factorial" onclick="fact()">N!</button>
+
+  <h3>Operaciones Binarias</h3>
+  <button id="multiplicacion" onclick="mul()">*</button>
+  <button id="suma" onclick="add()">+</button>
+  <button id="igual" onclick="eq()">=</button>
+
+  <h3>Operaciones en formato CSV</h3>
+  <button id="sumatorio" onclick="sumatorio()">Σx</button>
+  <button id="ordenar" onclick="ordenar()">Ordenar</button>
+  <button id="revertir" onclick="revertir()">Revertir</button>
+  <button id="quitar" onclick="quitar()">Quitar</button>
+  
  </body>
 </html>
